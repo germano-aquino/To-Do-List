@@ -1,0 +1,107 @@
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 46rem;
+    background-color: var(--gray-400);
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+}
+
+.task input {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    cursor: pointer;
+}
+
+.task label {
+    display: flex;
+}
+
+.task input:checked ~ .checkbox {
+    background-color: var(--purple-500);
+    border-color: var(--purple-500);
+} 
+
+.task input:checked ~ .checkbox:hover {
+    background-color: var(--purple-300);
+    border-color: var(--purple-300);
+} 
+
+.task input:checked ~ .checkbox::after {
+    display: block;
+}
+
+.task input:checked ~ .taskContent {
+    color: var(--gray-300);
+    text-decoration: line-through;
+}
+
+.labelWrap {
+    display: inline-block;
+}
+
+.checkbox {
+    display: inline-block;
+
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid var(--blue-300);
+    border-radius: 50%/50%;
+    transform: scale(0.75);
+
+    cursor: pointer;
+}
+
+.checkbox:hover {
+    border: 2px solid var(--blue-500);
+}
+
+.checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.task .checkbox:after {
+    left: 0.5625rem;
+    top: 0.3125rem;
+    width: 0.3125rem;
+    height: 0.625rem;
+    border: solid var(--gray-100);
+    border-width: 0 2px 2px 0;
+    -webkit-transform: translate(-40%, -15%) rotate(45deg);
+    -ms-transform: translate(-40%, -15%) rotate(45deg);
+    transform: translate(-40%, -15%) rotate(45deg);
+}
+
+.taskContent {
+    color: var(--gray-100);
+    line-height: 1.4;
+    cursor: pointer;
+    max-width: 39.5rem;
+    padding: 0 0.75rem 0 0.75rem;
+}
+
+.deleteButton {
+    display: flex;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.deleteButton button {
+    background-color: var(--gray-400);
+    border: 0;
+    color: var(--gray-300);
+    cursor: pointer;
+}
+
+.deleteButton button:hover {
+    color: var(--red);
+    background: var(--gray-400);
+    border-radius: 4px;
+
+}
