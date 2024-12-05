@@ -25,17 +25,15 @@ export function Task({task, onCompletedTask, onDeleteTask}: taskProps) {
 
     return (
         <div className={styles.task}>
-            <div className={styles.labelWrap}>
-                <label>
-                    <input
-                        type='checkbox'
-                        checked={task.completed}
-                        onChange={handleCompletedTask} 
-                    />
-                    <div className={styles.checkbox}></div>
-                    <div className={styles.taskContent}>{task.content}</div>
-                </label>
-            </div>
+            <label>
+                <input
+                    type='checkbox'
+                    checked={task.completed}
+                    onChange={handleCompletedTask} 
+                />
+                <div className={styles.checkbox}></div>
+                <div className={styles.taskContent}>{task.content}</div>
+            </label>
             <div className={styles.deleteButton}>
                 <button onClick={handleDeleteTask} title='Deletar Tarefa'>
                     <Trash />
